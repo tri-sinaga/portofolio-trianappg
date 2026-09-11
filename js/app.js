@@ -135,15 +135,13 @@ function renderSemesterTimeline(containerId, courses) {
 
         <p class="lead-text" style="font-size: 0.95rem; margin-bottom: 1rem;">${course.summary}</p>
 
-        <div class="framework-content-box" id="content-${course.id}">
-          <p><strong>Artefak Bukti Belajar:</strong> ${course.framework.artefak}</p>
-        </div>
+       
 
         <div class="reflection-actions">
-          <button class="btn btn-gold btn-view-artifact" data-course-id="${course.id}">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
-            View Artifact
-          </button>
+          <a href="${course.driveUrl || 'https://drive.google.com/'}" target="_blank" rel="noopener noreferrer" class="btn btn-gold" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            View Reflection ↗
+          </a>
         </div>
       </div>
     </div>
@@ -154,13 +152,6 @@ function renderSemesterTimeline(containerId, courses) {
     btn.addEventListener('click', () => {
       const courseId = btn.dataset.courseId;
       openReflectionModal(courseId);
-    });
-  });
-
-  container.querySelectorAll('.btn-view-artifact').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const courseId = btn.dataset.courseId;
-      openArtifactModal(courseId);
     });
   });
 }
@@ -240,8 +231,8 @@ function initDocumentRepository() {
   if (!container) return;
 
   function renderDocs(category = 'ALL') {
-    const filtered = category === 'ALL' 
-      ? documentsData 
+    const filtered = category === 'ALL'
+      ? documentsData
       : documentsData.filter(d => d.category === category);
 
     container.innerHTML = filtered.map(doc => `
@@ -259,19 +250,15 @@ function initDocumentRepository() {
           <button class="btn btn-secondary btn-sm btn-view-doc" data-doc-id="${doc.id}" style="flex: 1;">
             Preview
           </button>
-          <button class="btn btn-primary btn-sm btn-download-doc" data-doc-id="${doc.id}">
-            Download
-          </button>
+          <a href="${doc.driveUrl || 'https://drive.google.com/'}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="display: inline-flex; align-items: center; gap: 0.25rem; text-decoration: none;">
+            Google Drive ↗
+          </a>
         </div>
       </div>
     `).join('');
 
     container.querySelectorAll('.btn-view-doc').forEach(btn => {
       btn.addEventListener('click', () => openDocViewerModal(btn.dataset.docId));
-    });
-
-    container.querySelectorAll('.btn-download-doc').forEach(btn => {
-      btn.addEventListener('click', () => triggerDownloadSimulation(btn.dataset.docId));
     });
   }
 
@@ -287,7 +274,7 @@ function initDocumentRepository() {
 }
 
 /* --------------------------------------------------------------------------
-   07. MODAL DIALOGS
+   07. MODAL UTILITIES & CONTENT GENERATOR
    -------------------------------------------------------------------------- */
 function initModals() {
   const modalOverlay = document.getElementById('modalOverlay');
@@ -307,20 +294,21 @@ function initModals() {
   }
 }
 
-function openModal(title, bodyHTML, footerHTML = '') {
+function openModal(title, contentHtml, footerHtml = '') {
   const modalOverlay = document.getElementById('modalOverlay');
   const modalTitle = document.getElementById('modalTitle');
   const modalBody = document.getElementById('modalBody');
   const modalFooter = document.getElementById('modalFooter');
 
-  if (modalTitle) modalTitle.textContent = title;
-  if (modalBody) modalBody.innerHTML = bodyHTML;
-  if (modalFooter) modalFooter.innerHTML = footerHTML;
+  if (!modalOverlay) return;
 
-  if (modalOverlay) {
-    modalOverlay.classList.add('open');
-    modalOverlay.setAttribute('aria-hidden', 'false');
-  }
+  if (modalTitle) modalTitle.textContent = title;
+  if (modalBody) modalBody.innerHTML = contentHtml;
+  if (modalFooter) modalFooter.innerHTML = footerHtml;
+
+  modalOverlay.classList.add('open');
+  modalOverlay.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
 }
 
 function closeModal() {
@@ -328,6 +316,7 @@ function closeModal() {
   if (modalOverlay) {
     modalOverlay.classList.remove('open');
     modalOverlay.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
   }
 }
 
@@ -343,18 +332,20 @@ function openReflectionModal(courseId) {
       <h3 style="margin-top: 0.5rem; color: var(--color-dark);">${course.title}</h3>
       <p class="lead-text">${course.summary}</p>
     </div>
+
     
     <div style="display: flex; flex-direction: column; gap: 1.25rem;">
-      <div style="background: var(--color-gold-light); padding: 1.25rem; border: 1px solid var(--color-gold); border-radius: 6px;">
+     <div style="background: var(--color-gold-light); padding: 1.25rem; border: 1px solid var(--color-gold); border-radius: 6px;">
         <h4 style="color: var(--color-dark); margin-bottom: 0.4rem;">📎 Artefak Bukti Belajar</h4>
         <p><strong>${course.artifactTitle}</strong> (${course.artifactType})</p>
         <p style="font-size: 0.9rem; color: var(--color-text-secondary); margin-top: 0.5rem; line-height: 1.6;">${course.framework.artefak}</p>
       </div>
     </div>
+    
   `;
 
   const footer = `
-    <button class="btn btn-gold" onclick="openArtifactModal('${course.id}')">View Related Artifact</button>
+    <a href="${course.driveUrl || 'https://drive.google.com/'}" target="_blank" rel="noopener noreferrer" class="btn btn-gold" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.35rem;">View Related Artifact ↗</a>
     <button class="btn btn-secondary" onclick="closeModal()">Close</button>
   `;
 
@@ -366,36 +357,8 @@ function openArtifactModal(courseId) {
   const course = allCourses.find(c => c.id === courseId);
   if (!course) return;
 
-  const html = `
-    <div class="doc-viewer-sim">
-      <div style="margin-bottom: 1rem;">
-        <span class="badge badge-gold">Official PPG Artifact Evidence</span>
-        <h3 style="margin-top: 0.5rem; color: var(--color-dark);">${course.artifactTitle}</h3>
-        <p class="caption-text">Mata Kuliah: ${course.title} (${course.code})</p>
-      </div>
-
-      <div class="doc-sheet-paper">
-        <h4 style="border-bottom: 2px solid var(--color-gold); padding-bottom: 0.5rem; margin-bottom: 1rem; color: var(--color-primary);">
-          DOKUMEN BUKTI CAPAIAN PEMBELAJARAN
-        </h4>
-        <p><strong>Nama Mahasiswa:</strong> [NAMA LENGKAP]</p>
-        <p><strong>NIM:</strong> [NIM]</p>
-        <p><strong>Program Studi:</strong> [PROGRAM STUDI]</p>
-        <p><strong>Jenis Artefak:</strong> ${course.artifactType}</p>
-        <hr style="margin: 1rem 0; border: none; border-top: 1px dashed #CBD5E1;">
-        <p><strong>Deskripsi Singkat Artefak:</strong></p>
-        <p style="background: #F8FAFC; padding: 1rem; border-radius: 6px; font-size: 0.9rem;">${course.framework.artefak}</p>
-        <p style="margin-top: 1rem;"><strong>Dampak Pembelajaran:</strong> Memberikan bukti terukur atas kemampuan perancangan, pelaksanaan, dan refleksi pedagogis sesuai standar lulusan Guru Profesional PPG Prajabatan.</p>
-      </div>
-    </div>
-  `;
-
-  const footer = `
-    <button class="btn btn-primary" onclick="triggerDownloadSimulation('${course.id}')">Download Artifact PDF</button>
-    <button class="btn btn-secondary" onclick="closeModal()">Close</button>
-  `;
-
-  openModal(`Artefak Pembelajaran — ${course.code}`, html, footer);
+  const driveUrl = course.driveUrl || "https://drive.google.com/";
+  window.open(driveUrl, '_blank');
 }
 
 function openProjectModal(projId) {
@@ -445,9 +408,14 @@ function openDocViewerModal(docId) {
   const doc = documentsData.find(d => d.id === docId);
   if (!doc) return;
 
+  const driveUrl = doc.driveUrl || "https://drive.google.com/";
+
   const html = `
     <div class="doc-viewer-sim">
-      <span class="badge badge-gold">${doc.categoryLabel}</span>
+      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
+        <span class="badge badge-gold">${doc.categoryLabel}</span>
+        <span class="badge badge-primary" style="background: #E8F0FE; color: #1A73E8; border: 1px solid #C2E7FF;">Google Drive Storage</span>
+      </div>
       <h3 style="margin-top: 0.5rem; color: var(--color-dark);">${doc.title}</h3>
       <p class="caption-text">Tanggal: ${doc.date} | Format: ${doc.fileType}</p>
 
@@ -458,25 +426,33 @@ function openDocViewerModal(docId) {
         <pre style="white-space: pre-wrap; font-family: var(--font-body); font-size: 0.9rem; color: var(--color-text-primary); line-height: 1.6;">${doc.contentSnippet}</pre>
         
         <div style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--color-border); font-size: 0.8rem; color: var(--color-text-secondary);">
-          * Dokumen ini terverifikasi secara legal sebagai hasil karya portofolio akademik PPG Prajabatan.
+          * Dokumen ini terverifikasi secara legal sebagai hasil karya portofolio akademik PPG Prajabatan yang tersimpan di Google Drive.
         </div>
       </div>
     </div>
   `;
 
   const footer = `
-    <button class="btn btn-primary" onclick="triggerDownloadSimulation('${doc.id}')">Download File (${doc.fileType})</button>
-    <button class="btn btn-secondary" onclick="closeModal()">Close</button>
+    <a href="${driveUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+      Buka Berkas di Google Drive
+    </a>
+    <button class="btn btn-secondary" onclick="closeModal()">Tutup</button>
   `;
 
   openModal(`Document Viewer — ${doc.title}`, html, footer);
 }
 
 function triggerDownloadSimulation(id) {
-  alert(`[SIMULASI DOWNLOAD] Mengunduh berkas portofolio resmi ID: ${id}. Berkas siap digunakan untuk keperluan asesmen LPTK.`);
+  const allCourses = [...reflectionsData.semester1, ...reflectionsData.semester2];
+  const course = allCourses.find(c => c.id === id);
+  const doc = documentsData.find(d => d.id === id);
+  const targetUrl = (course && course.driveUrl) || (doc && doc.driveUrl) || "https://drive.google.com/";
+
+  window.open(targetUrl, '_blank');
 }
 
-window.openSummaryModal = function() {
+window.openSummaryModal = function () {
   const html = `
     <div style="text-align: center; padding: 1rem 0;">
       <img src="asset/IMG_4645.JPG" alt="Foto Profil Mahasiswa" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; object-position: center top; margin: 0 auto 1rem auto; border: 2px solid var(--color-gold); display: block;">

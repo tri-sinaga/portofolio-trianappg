@@ -32,7 +32,9 @@
   <nav class="navbar" id="navbar" aria-label="Main Navigation">
     <div class="container navbar-container">
       <a href="#hero" class="navbar-brand" aria-label="Home">
-        <div class="brand-icon">P</div>
+        <div class="brand-icon">
+          <img src="asset/uny.png" alt="UNY" style="width: 38px; height: 38px; object-fit: contain;">
+        </div>
         <div class="brand-text">
           <span class="brand-title">PPG CALON GURU</span>
           <span class="brand-sub">PORTOFOLIO AKADEMIK</span>
@@ -43,7 +45,7 @@
       <ul class="nav-links">
         <li><a href="#hero" class="nav-link active">Home</a></li>
         <li><a href="#profil" class="nav-link">Profil</a></li>
-        <li><a href="#identitas" class="nav-link">Identitas</a></li>
+        <li><a href="#identifikasi" class="nav-link">Identifikasi</a></li>
         <li><a href="#semester1" class="nav-link">Semester 1</a></li>
         <li><a href="#semester2" class="nav-link">Semester 2</a></li>
         <li><a href="#refleksi" class="nav-link">Refleksi</a></li>
@@ -78,77 +80,35 @@
 
   <!-- 01. HERO SECTION -->
   <section class="hero-section" id="hero">
-    <div class="container hero-grid">
-      <div class="hero-content">
-        <div class="hero-header-tag">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polygon
-              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-            </polygon>
-          </svg>
-          PORTOFOLIO AKADEMIK PPG PRAJABATAN
-        </div>
+    <!-- Background Image -->
+    <div class="hero-bg" style="background-image: url('asset/header.JPG');"></div>
+    <!-- Dark Gradient Overlay -->
+    <div class="hero-overlay"></div>
 
-        <h1 class="hero-name">Triana Elisabet Sinaga</h1>
+    <div class="container hero-inner">
 
-        <div class="hero-subtitle">
-          <span>Calon Guru Profesional</span>
-          <span style="color: var(--color-gold);">•</span>
-          <span style="font-weight: 400; color: var(--color-text-secondary); font-size: 1.05rem;">Reflective Educator
-            &amp; Adaptive Learner</span>
-        </div>
+      <!-- Nama Utama (Sesuai Referensi Gambar "Raining Offers For Hot Summer!") -->
+      <h1 class="hero-name-ref">
+        Triana Elisabet Sinaga
+      </h1>
 
-        <div class="hero-statement">
-          <p>"Menjadi pendidik yang tidak hanya mengajar, tetapi membantu peserta didik menemukan potensi, makna, dan
-            pengalaman belajar yang relevan."</p>
-        </div>
+      <!-- Subtitle Minimalis (Sesuai Referensi Gambar) -->
+      <p class="hero-subtitle-ref">
+        Portofolio Akademik &amp; Pengalaman Praktik PPL Informatika
+      </p>
 
-        <div class="hero-cta-group">
-          <a href="#profil" class="btn btn-primary">
-            Lihat Perjalanan Saya
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </a>
-          <button class="btn btn-secondary" onclick="openSummaryModal()">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-              <polyline points="7 10 12 15 17 10"></polyline>
-              <line x1="12" y1="15" x2="12" y2="3"></line>
-            </svg>
-            Download Portfolio
-          </button>
-        </div>
+      <!-- Tombol CTA Persegi (Sesuai Referensi Gambar "SHOP NOW" & "FIND MORE") -->
+      <div class="hero-cta-ref">
+        <a href="#profil" class="btn-ref-solid">LIHAT PORTFOLIO</a>
+        <button class="btn-ref-outline" onclick="openSummaryModal()">DOWNLOAD</button>
       </div>
 
-      <!-- Student Portrait Card -->
-      <div class="hero-portrait-card">
-        <div class="portrait-frame">
-          <img src="asset/profil%20portoo.webp" alt="Profil Portofolio Mahasiswa Calon Guru" class="portrait-img">
-          <div class="portrait-badge-overlay">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-            </svg>
-            PPG Prajabatan Verified
-          </div>
-        </div>
+    </div>
 
-        <div class="hero-stats-row">
-          <div class="stat-item">
-            <span class="stat-num">2</span>
-            <span class="stat-label">Semester</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-num">11</span>
-            <span class="stat-label">Mata Kuliah</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-num">100%</span>
-            <span class="stat-label">PPL Tuntas</span>
-          </div>
-        </div>
-      </div>
+    <!-- Scroll Indicator -->
+    <div class="hero-scroll-hint" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="hero-scroll-line"></div>
     </div>
   </section>
 
@@ -194,6 +154,22 @@
               <span class="info-value"><span class="info-placeholder">SMA Negeri 3 Yogyakarta</span></span>
             </div>
           </div>
+
+          <!-- Galeri Foto Aset (Mengisi Space Kosong Sesuai Request User: padma.jpeg, bendera.jpeg, kita.jpeg) -->
+          <div class="profile-card-gallery">
+            <span class="gallery-label">Dokumentasi Praktik PPL</span>
+            <div class="gallery-grid">
+              <div class="gallery-item">
+                <img src="asset/padma.jpeg" alt="Dokumentasi Padma" class="gallery-img">
+              </div>
+              <div class="gallery-item">
+                <img src="asset/bendera.jpeg" alt="Dokumentasi Bendera" class="gallery-img">
+              </div>
+              <div class="gallery-item">
+                <img src="asset/kita.jpeg" alt="Dokumentasi PPL Kita" class="gallery-img">
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- Card 2: Professional Identity Statement -->
@@ -207,18 +183,10 @@
             </div>
           </div>
 
-          <p class="lead-text" style="font-size: 1rem; margin-bottom: 1rem;">
-            Sebagai calon guru profesional lulusan PPG Prajabatan, saya berkomitmen menjalankan peran pendidik yang
-            tidak hanya berfokus pada penyampaian konten materi, melainkan memfasilitasi perkembangan holistik peserta
-            didik.
-          </p>
+          <div class="profile-photo-frame">
+            <img src="asset/profil%20portoo.webp" alt="Foto Profil Triana Elisabet Sinaga" class="profile-photo-img">
+          </div>
 
-          <p style="font-size: 0.95rem; color: var(--color-text-secondary); margin-bottom: 1.25rem;">
-            Melalui integrasi pendekatan Understanding by Design (UbD), pembelajaran berdiferensiasi, serta Pembelajaran
-            Sosial Emosional (PSE), saya berupaya menciptakan iklim belajar yang aman, nyaman, dan berpihak pada murid.
-          </p>
-
-  
         </div>
       </div>
     </div>
@@ -239,10 +207,10 @@
           <span class="id-card-num"></span>
           <h3 class="id-card-title">VISI UNTUK PENDIDIKAN INDONESIA</h3>
           <p style="font-size: 0.95rem; color: var(--color-text-secondary); line-height: 1.7;">
-           Mewujudkan ekosistem pendidikan Indonesia yang berlandaskan ajaran Ki Hajar Dewantara,
-           di mana setiap peserta didik tumbuh sesuai kodrat alam dan zamannya, didampingi oleh 
-          pendidik yang profesional dan berkomitmen, serta mendapatkan layanan pendidikan yang 
-          adil dan merata di seluruh penjuru negeri.
+            Mewujudkan ekosistem pendidikan Indonesia yang berlandaskan ajaran Ki Hajar Dewantara,
+            di mana setiap peserta didik tumbuh sesuai kodrat alam dan zamannya, didampingi oleh
+            pendidik yang profesional dan berkomitmen, serta mendapatkan layanan pendidikan yang
+            adil dan merata di seluruh penjuru negeri.
           </p>
           <div style="margin-top: auto; padding-top: 1rem;">
             <span class="badge badge-gold"></span>
@@ -254,8 +222,9 @@
           <span class="id-card-num"></span>
           <h3 class="id-card-title">VISI PRIBADI SEBAGAI CALON GURU</h3>
           <p style="font-size: 0.95rem; color: var(--color-text-secondary); line-height: 1.7;">
-          Menjadi guru yang mampu menciptakan pembelajaran yang aman dan bermakna sesuai dengan kebutuhan murid, 
-          membantu mereka mengembangkan kemampuan berpikir untuk mengambil keputusan dan menyelesaikan masalah dalam kehidupan, 
+            Menjadi guru yang mampu menciptakan pembelajaran yang aman dan bermakna sesuai dengan kebutuhan murid,
+            membantu mereka mengembangkan kemampuan berpikir untuk mengambil keputusan dan menyelesaikan masalah dalam
+            kehidupan,
             serta terus berkembang menjadi pendidik yang profesional dan bertanggung jawab.
 
           </p>
@@ -276,7 +245,7 @@
               <div class="step-num">01</div>
               <div class="step-body">
                 <h4>Pembelajaran berdiferensiasi dan Problem-Based Learning</h4>
-                <p>Menuntun murid menggali minat, bakat serta mengasah keterampilan berpikir kritisnya&amp;</p>
+                <p>Menuntun murid menggali minat, bakat serta mengasah keterampilan berpikir kritisnya</p>
               </div>
             </div>
 
@@ -292,7 +261,7 @@
               <div class="step-num">03</div>
               <div class="step-body">
                 <h4>Lingkungan Aman</h4>
-                <p>&amp; Menciptakan lingkungan kelas yang aman</p>
+                <p>Menciptakan lingkungan kelas yang aman</p>
               </div>
             </div>
 
@@ -300,7 +269,7 @@
               <div class="step-num">04</div>
               <div class="step-body">
                 <h4>Kompetensi Profesional</h4>
-                <p>Berkomitmen meningkatkan kompetensi profesional melalui refleksi diri  &amp;</p>
+                <p>Berkomitmen meningkatkan kompetensi profesional melalui refleksi diri</p>
               </div>
             </div>
 
@@ -308,7 +277,8 @@
               <div class="step-num">05</div>
               <div class="step-body">
                 <h4>Membangun Kemitraan</h4>
-                <p>Membangun kemitraan yang kuat dengan rekan sejawat, orang tua, dan masyarakat  &amp; komunitas guru</p>
+                <p>Membangun kemitraan yang kuat dengan rekan sejawat, orang tua, dan masyarakat &amp; komunitas guru
+                </p>
               </div>
             </div>
           </div>
@@ -391,7 +361,7 @@
           style="background: rgba(200, 169, 107, 0.1); border-left-color: var(--color-gold); color: #FFFFFF; margin: 1.5rem 0;">
           "Guru profesional tidak diukur dari seberapa banyak materi yang ia jelaskan di depan kelas, melainkan dari
           seberapa bermakna pengalaman belajar yang dialami oleh peserta didiknya."
-          <span class="quote-author" style="color: var(--color-gold);">— Catatan Refleksi Diri [NAMA LENGKAP]</span>
+          <span class="quote-author" style="color: var(--color-gold);">— Triana Elisabet Sinaga </span>
         </blockquote>
       </div>
 
@@ -509,24 +479,24 @@
                 <div class="contact-icon">✉️</div>
                 <div>
                   <div style="font-size: 0.75rem; color: var(--color-gold); font-weight: 700;">EMAIL RESMI</div>
-                  <div style="font-size: 1rem; font-weight: 600;">[EMAIL]</div>
+                  <div style="font-size: 1rem; font-weight: 600;">trianaelisabet.2025@student.uny.ac.id</div>
                 </div>
               </div>
 
               <div class="contact-item">
                 <div class="contact-icon">💼</div>
                 <div>
-                  <div style="font-size: 0.75rem; color: var(--color-gold); font-weight: 700;">LINKEDIN PROFESIONAL
+                  <div style="font-size: 0.75rem; color: var(--color-gold); font-weight: 700;">
                   </div>
-                  <div style="font-size: 1rem; font-weight: 600;">[LINKEDIN]</div>
+                  <div style="font-size: 1rem; font-weight: 600;"></div>
                 </div>
               </div>
 
               <div class="contact-item">
                 <div class="contact-icon">📍</div>
                 <div>
-                  <div style="font-size: 0.75rem; color: var(--color-gold); font-weight: 700;">DOMISILI</div>
-                  <div style="font-size: 1rem; font-weight: 600;">[ALAMAT]</div>
+                  <div style="font-size: 0.75rem; color: var(--color-gold); font-weight: 700;"></div>
+                  <div style="font-size: 1rem; font-weight: 600;"></div>
                 </div>
               </div>
             </div>
@@ -534,7 +504,7 @@
 
           <div
             style="padding-top: 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.1); font-size: 0.85rem; color: #94A3B8;">
-            Status: Lulusan PPG Prajabatan 2026 • Siap Penugasan Guru Profesional
+
           </div>
         </div>
 
@@ -612,7 +582,7 @@
               AKADEMIK PPG</span>
           </div>
           <p style="color: #94A3B8; font-size: 0.9rem; max-width: 450px; line-height: 1.6;">
-            Portofolio digital resmi calon guru profesional program PPG Prajabatan. Memvisualisasikan perkembangan
+            Portofolio digital resmi calon guru profesional program PPG Calon Guru. Memvisualisasikan perkembangan
             reflektif, karya inovasi, dan bukti capaian pembelajaran secara transparan.
           </p>
         </div>
@@ -636,14 +606,14 @@
             Legal &amp; Lisensi</h4>
           <p style="font-size: 0.85rem; color: #94A3B8; line-height: 1.5;">
             Hak cipta seluruh dokumen &amp; karya inovasi dilindungi. Diperuntukkan khusus bagi asesmen akademik PPG
-            Prajabatan.
+            Calon Guru.
           </p>
         </div>
       </div>
 
       <div class="footer-bottom">
         <div>
-          [NAMA LENGKAP] • PPG Prajabatan • Program Studi [PROGRAM STUDI]
+          Triana Elisabet Sinaga• PPG Prajabatan • Program Studi Informatika
         </div>
         <div>
           Academic Portfolio © 2026. All rights reserved.

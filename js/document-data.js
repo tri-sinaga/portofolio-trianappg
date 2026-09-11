@@ -13,6 +13,7 @@ const documentsData = [
     date: "Oktober 2025",
     fileType: "PDF (1.4 MB)",
     icon: "📑",
+    driveUrl: "https://drive.google.com/file/d/1ModulAjar_Berdiferensiasi/view?usp=sharing",
     contentSnippet: "LEMBAR PERANGKAT AJAR BERDIFERENSIASI\nMata Pelajaran: IPAS / Tematik\nKelas / Semester: V / Ganjil\nTujuan Pembelajaran: Peserta didik mampu menganalisis hubungan antar komponen ekosistem melalui penyelidikan kelompok berbasis minat."
   },
   {
@@ -24,6 +25,7 @@ const documentsData = [
     date: "Desember 2025",
     fileType: "PDF (3.2 MB)",
     icon: "🎓",
+    driveUrl: "https://drive.google.com/file/d/1LaporanPTK_PPLMandiri/view?usp=sharing",
     contentSnippet: "LAPORAN PENELITIAN TINDAKAN KELAS (PTK)\nDisusun Oleh: [NAMA LENGKAP] (NIM: [NIM])\nLokasi Penelitian: SD Negeri Mitra PPL Mandiri\nHasil: Siklus I ketercapaian 68%, Siklus II meningkat signifikan menjadi 91%."
   },
   {
@@ -35,6 +37,7 @@ const documentsData = [
     date: "Januari 2026",
     fileType: "PDF (2.1 MB)",
     icon: "✍️",
+    driveUrl: "https://drive.google.com/file/d/1PortofolioRefleksi_ALACT/view?usp=sharing",
     contentSnippet: "JURNAL REFLEKSI AKADEMIK PPG PRAJABATAN\nRefleksi ini merangkum proses perubahan pola pikir dari pengajar instruksional menjadi pendidik transformatif yang peka sosial-emosional."
   },
   {
@@ -46,6 +49,7 @@ const documentsData = [
     date: "Nopember 2025",
     fileType: "PDF (980 KB)",
     icon: "📊",
+    driveUrl: "https://drive.google.com/file/d/1InstrumenAsesmen_Diagnostik/view?usp=sharing",
     contentSnippet: "INSTRUMEN ASESMEN DIAGNOSTIK & FORMAL\nMeliputi: 1. Lembar Kuesioner Gaya Belajar, 2. Rubrik Kinerja Diskusi Kelompok, 3. Lembar Penilaian Teman Sejawat."
   },
   {
@@ -57,6 +61,7 @@ const documentsData = [
     date: "Desember 2025",
     fileType: "PDF (4.5 MB)",
     icon: "🏆",
+    driveUrl: "https://drive.google.com/file/d/1ProjekKepemimpinan_PojokLiterasi/view?usp=sharing",
     contentSnippet: "PRODUK KEPEMIMPINAN PPG PRAJABATAN\nJudul: Pojok Baca & Literasi Inklusif Desa Mitra\nMitra Utama: Karang Taruna, Perpustakaan Daerah, dan Sekolah Dasar Mitra."
   },
   {
@@ -68,6 +73,7 @@ const documentsData = [
     date: "Januari 2026",
     fileType: "PDF (1.1 MB)",
     icon: "📜",
+    driveUrl: "https://drive.google.com/file/d/1SertifikatKelulusan_PPL/view?usp=sharing",
     contentSnippet: "SURAT KETERANGAN CAPAIAN PRAKTIK PENGALAMAN LAPANGAN\nDiterbitkan oleh LPTK Penyelenggara PPG Prajabatan.\nMenyatakan bahwa [NAMA LENGKAP] telah menyelesaikan seluruh siklus PPL dengan nilai A (Sangat Memuaskan)."
   },
   {
@@ -79,6 +85,7 @@ const documentsData = [
     date: "Nopember 2025",
     fileType: "PDF (1.2 MB)",
     icon: "🧠",
+    driveUrl: "https://drive.google.com/file/d/1Jurnal_KSE_CASEL/view?usp=sharing",
     contentSnippet: "DOKUMEN INTEGRASI PEMBELAJARAN SOSIAL EMOSIONAL\nBerisi analisis efektivitas penerapan roda emosi (Plutchik) dan teknik STOP dalam menenangkan suasana kelas sebelum asesmen sumatif."
   },
   {
@@ -90,6 +97,7 @@ const documentsData = [
     date: "Agustus 2025",
     fileType: "PDF (850 KB)",
     icon: "🏅",
+    driveUrl: "https://drive.google.com/file/d/1Sertifikat_WebSeminar/view?usp=sharing",
     contentSnippet: "SERTIFIKAT SEMINAR NASIONAL PENDIDIKAN\nDiberikan atas keikutsertaan sebagai pemakalah hasil riset PPL dalam Seminar Nasional Inovasi Pembelajaran Abad 21."
   }
 ];
