@@ -1,0 +1,36 @@
+================================================================================
+PANDUAN PENAMBAHAN FOTO DOKUMENTASI PPL SMAN 3 YOGYAKARTA
+================================================================================
+
+1. FUNGSI FOLDER:
+   Folder ini disiapkan khusus untuk menyimpan seluruh file foto asli dokumentasi
+   kegiatan PPL di SMA Negeri 3 Yogyakarta.
+   Format yang didukung: .jpg, .jpeg, .png, .webp.
+
+2. CARA MENAMPILKAN FOTO DI GALERI WEBSITE:
+   Langkah 1:
+     Salin/masukkan file foto dokumentasi Anda ke dalam folder ini:
+     asset/dokumentasi-ppl/
+     (Misalnya: observasi-kelas.jpg, praktik-mengajar.jpg, upacara.jpg, dsb)
+
+   Langkah 2:
+     Buka file data galeri yang terletak di:
+     js/lampiran-data.js
+
+   Langkah 3:
+     Cari kegiatan yang ingin Anda pasang fotonya, lalu isi nilai properti 'image'
+     dengan jalur foto tersebut.
+     Contoh:
+       image: "asset/dokumentasi-ppl/observasi-kelas.jpg"
+
+   Langkah 4:
+     Simpan file js/lampiran-data.js dan refresh browser.
+     Foto Anda akan langsung tampil rapi dengan aspek rasio presisi, filter kategori,
+     serta fitur Lightbox untuk memperbesar foto saat diklik!
+
+3. TIPS:
+   - Jika properti 'image' dibiarkan kosong (""), galeri akan secara otomatis
+     menampilkan placeholder yang rapi dan profesional bertuliskan "Siap Ditambahkan Foto".
+   - Anda juga dapat menambah item kegiatan baru kapan saja dengan menyalin salah satu
+     blok data di js/lampiran-data.js tanpa perlu mengubah file HTML atau CSS lainnya.
+================================================================================

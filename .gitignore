@@ -1,0 +1,11 @@
+# Dependencies
+node_modules/
+
+# Temporary / Scratch test scripts
+scratch/
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
