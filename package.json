@@ -1,0 +1,14 @@
+{
+  "name": "porto-seminar",
+  "version": "1.0.0",
+  "description": "Portofolio Seminar PPG",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx -y serve . -l 3000",
+    "start": "npx -y serve . -l 3000",
+    "open": "cmd.exe /c start index.html"
+  },
+  "keywords": [],
+  "author": "trianaaelisabet",
+  "license": "ISC"
+}
