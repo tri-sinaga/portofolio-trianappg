@@ -21,7 +21,7 @@ const documentsData = [
     title: "Modul Ajar Materi Pengolahan Data TIK",
     category: "TEACHING MATERIAL",
     categoryLabel: "TEACHING MATERIAL",
-    description: "Dokumentasi perencanaan, anggaran, kemitraan, dan evaluasi dampak Projek Kepemimpinan Komunitas.",
+    description: "",
     date: "Desember 2025",
     fileType: "PDF",
     icon: "",
