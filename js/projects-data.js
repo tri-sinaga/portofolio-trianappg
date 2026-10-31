@@ -29,4 +29,22 @@ const projectsData = [
     details: "",
     driveUrl: "https://drive.google.com/file/d/1RzmThMV3n2jJJ2HiSOvWFzPm98vwOHQt/view?usp=sharing"
   },
+  {
+    id: "proj-01",
+    title: "Media Pembelajaran CT Game Lab",
+    tag: "Media Digital & AR",
+    problem: "Murid masih kesulitan menyusun Flowchart dan Kebutuhan Media Pembelajaran Variatif",
+    solution: "Mengembangkan media pembeajaran interaktif CT Game Lab yang memuat elemen gamifikasi dan Computational Thinking",
+    innovation: "Mengembangkan MediaPembelajaran Interaktif Berbasis Gamifikasi dan Pemikiran Komputasional.",
+    techUsed: "Wayground,Padlet dan Antygravity",
+    impact: "Memudahkan murid mengakses materi dan berbagai aktivitas pembelajaran Berpikir Komputasional dalam satu platform digital dan Menciptakan pembelajaran yang lebih praktis, interaktif, dan fleksibel",
+    docTitle: "Dokumentasi Karya",
+    details: "",
+    driveUrl: "https://ct-game-lab.vercel.app/",
+    type: "website",
+    screenshot: "asset/ctgame.png",
+    websiteUrl: "https://ct-game-lab.vercel.app/",
+    siteName: "Media Pembelajaran CT Game Lab",
+    shortDesc: "Media pembelajaran interaktif Berpikir Komputasional untuk siswa kelas X."
+  },
 ];

@@ -268,6 +268,93 @@ body {
   padding-top: 1.5rem;
 }
 
+/* Khusus Preview Proyek CT Game Lab */
+.project-website-preview {
+  width: 100%;
+  margin-top: 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-website-screen {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #0b1e3c;
+}
+
+.project-website-screen a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.project-website-screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.project-website-screen:hover img {
+  transform: scale(1.025);
+}
+
+.project-website-info {
+  padding: 1.15rem 1.25rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background: #ffffff;
+}
+
+.project-website-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-dark);
+  margin: 0;
+  line-height: 1.35;
+}
+
+.project-website-desc {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.btn-visit-website {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: linear-gradient(135deg, var(--color-primary) 0%, #224b7a 100%);
+  color: #ffffff !important;
+  padding: 0.7rem 1.35rem;
+  border-radius: var(--radius-sm, 8px);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none !important;
+  box-shadow: 0 3px 10px rgba(23, 54, 93, 0.2);
+  transition: all var(--transition-fast, 0.25s ease);
+  border: 1px solid rgba(201, 164, 92, 0.35);
+  align-self: flex-start;
+  margin-top: 0.35rem;
+}
+
+.btn-visit-website:hover {
+  background: var(--color-gold);
+  color: #0b1e3c !important;
+  border-color: var(--color-gold);
+  box-shadow: 0 4px 14px rgba(201, 164, 92, 0.35);
+  transform: translateY(-2px);
+}
+
 /* =========================================
    VISI & STRATEGI PENDIDIKAN
    ========================================= */

@@ -48,15 +48,48 @@ const lampiranData = [
     description: "Video dokumentasi pelaksanaan pembelajaran selama 4 siklus yang dilakukan oleh mahasiswa PPL PPG Calon Guru di Lab Komputer 1 SMAN 3 Yogyakarta"
   },
   {
+    id: "ppl-02",
+    title: "Video Pelaksanaan Presentasi",
+    category: "VIDEO",
+    categoryLabel: "Video",
+    date: "",
+    location: "Ruang Kelas & Lab Komputer, SMAN 3 Yogyakarta",
+    videoUrl: "asset/dokumentasi-ppl/presentasi9.mp4",
+    description: "Video dokumentasi pelaksanaan presentasi murid kelas X SMAN 3 Yogyakarta"
+  },
+  {
     id: "ppl-01",
     title: "Observasi Kelas X Informatika",
     category: "OBSERVASI",
     categoryLabel: "Observasi Pembelajaran",
     date: "12 Agustus 2025",
     location: "Ruang Kelas & Lab Komputer, SMAN 3 Yogyakarta",
-    image: "asset/dokumentasi-ppl/observasi.jpeg",
-    images: [], // Tambahkan beberapa foto di sini, contoh: ["asset/dokumentasi-ppl/foto-1.jpg", "asset/dokumentasi-ppl/foto-2.jpg"]
+    images: [
+      "asset/dokumentasi-ppl/observasi.jpeg",
+      "asset/dokumentasi-ppl/observasi1.jpg",
+      "asset/dokumentasi-ppl/observasi2.jpg",
+    ],
     description: "Kegiatan observasi awal untuk mengenali karakteristik peserta didik, pola interaksi di kelas, dinamika belajar, dan kesiapan infrastruktur pembelajaran informatika di SMAN 3 Yogyakarta."
+  },
+  {
+    id: "ppl-11",
+    title: "Praktik Mengajar Mandiri",
+    category: "PRAKTIK",
+    categoryLabel: "Praktik Mengajar",
+    date: "15 Oktober 2025",
+    location: "Kelas X SMAN 3 Yogyakarta",
+    images: [
+      "asset/dokumentasi-ppl/mandiri.png",
+      "asset/dokumentasi-ppl/mandiri1.png",
+      "asset/dokumentasi-ppl/mandiri2.png",
+      "asset/dokumentasi-ppl/mandiri3.png",
+      "asset/dokumentasi-ppl/mandiri4.png",
+      "asset/dokumentasi-ppl/mandiri5.jpg",
+      "asset/dokumentasi-ppl/mandiri6.png",
+      "asset/dokumentasi-ppl/mandiri7.png",
+      "asset/dokumentasi-ppl/mandiri8.png",
+    ],
+    description: "Pelaksanaan pembelajaran secara mandiri dengan menerapkan model Problem-Based Learning (PBL) dan pengelolaan kelas berbasis Social Emotional Learning (SEL)."
   },
   {
     id: "ppl-02",
@@ -135,19 +168,6 @@ const lampiranData = [
     description: "Dokumentasi kebersamaan dengan murid kelas X SMAN 3 Yogyakarta"
   },
   {
-    id: "ppl-07",
-    title: "Praktik Mengajar Mandiri",
-    category: "PRAKTIK",
-    categoryLabel: "Praktik Mengajar",
-    date: "10 September 2025",
-    location: "Ruang Kelas X-E SMAN 3 Yogyakarta",
-    images: [
-      "asset/dokumentasi-ppl/dokumentasimurix3.jpeg",
-      "asset/dokumentasi-ppl/dokumentasimuridx5.jpeg",
-    ],
-    description: "Dokumentasi praktik mengajar mandiri mahassiswa PPG Calon Guru."
-  },
-  {
     id: "ppl-08",
     title: "Tim PPL PPG",
     category: "SEKOLAH",
@@ -170,7 +190,10 @@ const lampiranData = [
     location: "Ruang Kelas X SMAN 3 Yogyakarta",
     images: [
       "asset/dokumentasi-ppl/presentasi.jpeg",
-      "asset/dokumentasi-ppl/presentasi.jpeg",
+      "asset/dokumentasi-ppl/presentasi1.jpeg",
+      "asset/dokumentasi-ppl/presentasi2.jpeg",
+      "asset/dokumentasi-ppl/presentasi3.jpeg",
+      "asset/dokumentasi-ppl/presentasi4.jpeg",
     ],
     description: "Diskusi dan Sesi presentasi hasil proyek kelompok"
   },
@@ -187,26 +210,6 @@ const lampiranData = [
       "asset/dokumentasi-ppl/non2.jpeg",
     ],
     description: "Kegiatan Non Mengajar Piket dan Monitoring Simulasi Pelaksanaan TKA"
-  },
-  {
-    id: "ppl-11",
-    title: "Praktik Mengajar Mandiri",
-    category: "PRAKTIK",
-    categoryLabel: "Praktik Mengajar",
-    date: "15 Oktober 2025",
-    location: "Kelas X SMAN 3 Yogyakarta",
-    images: [
-      "asset/dokumentasi-ppl/mandiri.png",
-      "asset/dokumentasi-ppl/mandiri1.png",
-      "asset/dokumentasi-ppl/mandiri2.png",
-      "asset/dokumentasi-ppl/mandiri3.png",
-      "asset/dokumentasi-ppl/mandiri4.png",
-      "asset/dokumentasi-ppl/mandiri5.jpg",
-      "asset/dokumentasi-ppl/mandiri6.png",
-      "asset/dokumentasi-ppl/mandiri7.png",
-      "asset/dokumentasi-ppl/mandiri8.png",
-    ],
-    description: "Pelaksanaan pembelajaran secara mandiri dengan menerapkan model Problem-Based Learning (PBL) dan pengelolaan kelas berbasis Social Emotional Learning (SEL)."
   },
   {
     id: "ppl-15",

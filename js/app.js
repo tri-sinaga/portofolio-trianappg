@@ -192,24 +192,107 @@ function initProjectsGrid() {
   if (!container) return;
 
   container.innerHTML = projectsData.map(proj => {
-    // Ubah tautan Google Drive menjadi tautan preview
-    let previewUrl = '';
+    const isCtGameLab = proj.type === 'website' ||
+      (proj.driveUrl && proj.driveUrl.includes('ct-game-lab.vercel.app')) ||
+      Boolean(proj.screenshot);
 
-    if (proj.driveUrl && proj.driveUrl.trim() !== '') {
-      previewUrl = proj.driveUrl
-        .replace(/\/view(\?.*)?$/, '/preview')
-        .replace(/\/edit(\?.*)?$/, '/preview');
+      let previewContent = '';
 
-      // Jika URL belum memiliki /preview atau /view
-      if (!previewUrl.includes('/preview')) {
-        previewUrl = previewUrl.replace(
-          /\/file\/d\/([^/]+).*$/,
-          '/file/d/$1/preview'
-        );
-      }
-    }
+        if (isCtGameLab) {
+          const siteUrl = proj.websiteUrl || proj.driveUrl || 'https://ct-game-lab.vercel.app/';
+          const screenshotImg = proj.screenshot || 'asset/ctgame.png';
+          const siteName = proj.siteName || proj.title || 'Media Pembelajaran CT Game Lab';
+          const shortDesc = proj.shortDesc || 'Media pembelajaran interaktif Berpikir Komputasional untuk siswa kelas X.';
 
-    return `
+          previewContent = `
+        <div class="project-website-preview">
+          <div class="project-website-screen">
+            <a href="${siteUrl}" target="_blank" rel="noopener noreferrer" title="Buka Website ${siteName}">
+              <img
+                src="${screenshotImg}"
+                alt="Screenshot Beranda ${siteName}"
+                loading="lazy"
+              />
+            </a>
+          </div>
+          <div class="project-website-info">
+            <h4 class="project-website-name">${siteName}</h4>
+            <p class="project-website-desc">${shortDesc}</p>
+            <div>
+              <a
+                href="${siteUrl}"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-visit-website"
+              >
+                <span>Kunjungi Website CT GAME LAB</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      `;
+        } else {
+          // Ubah tautan Google Drive menjadi tautan preview
+          let previewUrl = '';
+
+          if (proj.driveUrl && proj.driveUrl.trim() !== '') {
+            previewUrl = proj.driveUrl
+              .replace(/\/view(\?.*)?$/, '/preview')
+              .replace(/\/edit(\?.*)?$/, '/preview');
+
+            // Jika URL belum memiliki /preview atau /view
+            if (!previewUrl.includes('/preview')) {
+              previewUrl = previewUrl.replace(
+                /\/file\/d\/([^/]+).*$/,
+                '/file/d/$1/preview'
+              );
+            }
+          }
+
+          previewContent = `
+        <div style="
+          width: 100%;
+          margin-top: 0.75rem;
+          border: 1px solid var(--color-border);
+          border-radius: 10px;
+          overflow: hidden;
+          background: #fff;
+        ">
+          ${previewUrl
+              ? `
+                  <iframe
+                    src="${previewUrl}"
+                    title="Dokumentasi ${proj.title}"
+                    width="100%"
+                    height="420"
+                    style="display:block; border:0;"
+                    loading="lazy"
+                    allow="autoplay"
+                  ></iframe>
+                `
+              : `
+                  <div style="
+                    padding: 2rem 1rem;
+                    text-align: center;
+                    color: var(--color-text-secondary);
+                  ">
+                    <p>Tautan Google Drive belum ditambahkan.</p>
+                    <p style="font-size:0.85rem;">
+                      Tambahkan properti driveUrl pada projects-data.js.
+                    </p>
+                  </div>
+                `
+            }
+        </div>
+      `;
+        }
+
+        return `
       <div class="project-card reveal-on-scroll">
         <div class="project-thumb-container">
           <div class="project-thumb-icon">💡</div>
@@ -235,44 +318,11 @@ function initProjectsGrid() {
             <strong>Dokumentasi Karya:</strong>
           </div>
 
-          <div style="
-            width: 100%;
-            margin-top: 0.75rem;
-            border: 1px solid var(--color-border);
-            border-radius: 10px;
-            overflow: hidden;
-            background: #fff;
-          ">
-            ${previewUrl
-        ? `
-                  <iframe
-                    src="${previewUrl}"
-                    title="Dokumentasi ${proj.title}"
-                    width="100%"
-                    height="420"
-                    style="display:block; border:0;"
-                    loading="lazy"
-                    allow="autoplay"
-                  ></iframe>
-                `
-        : `
-                  <div style="
-                    padding: 2rem 1rem;
-                    text-align: center;
-                    color: var(--color-text-secondary);
-                  ">
-                    <p>Tautan Google Drive belum ditambahkan.</p>
-                    <p style="font-size:0.85rem;">
-                      Tambahkan properti driveUrl pada projects-data.js.
-                    </p>
-                  </div>
-                `
-      }
-          </div>
+          ${previewContent}
         </div>
       </div>
     `;
-  }).join('');
+      }).join('');
 }
 
 
