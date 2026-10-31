@@ -5,6 +5,30 @@
 
 const documentsData = [
   {
+    id: "doc-04",
+    title: "Modul Ajar Materi Computational Thinking",
+    category: "TEACHING MATERIAL",
+    categoryLabel: "TEACHING MATERIAL",
+    description: "",
+    date: "Nopember 2025",
+    fileType: "PDF",
+    icon: "",
+    driveUrl: "https://drive.google.com/file/d/1jJR6zdk3jtOsRipNDAjvZMzIWAOwp65-/view?usp=sharing",
+    contentSnippet: "INSTRUMEN ASESMEN DIAGNOSTIK & FORMAL\nMeliputi: 1. Lembar Kuesioner Gaya Belajar, 2. Rubrik Kinerja Diskusi Kelompok, 3. Lembar Penilaian Teman Sejawat."
+  },
+  {
+    id: "doc-05",
+    title: "Modul Ajar Materi Pengolahan Data TIK",
+    category: "TEACHING MATERIAL",
+    categoryLabel: "TEACHING MATERIAL",
+    description: "Dokumentasi perencanaan, anggaran, kemitraan, dan evaluasi dampak Projek Kepemimpinan Komunitas.",
+    date: "Desember 2025",
+    fileType: "PDF",
+    icon: "",
+    driveUrl: "https://drive.google.com/file/d/10Ba_txQ3aq42nBK-ipIGql1cKDKRb8SW/view?usp=sharing",
+    contentSnippet: "PRODUK KEPEMIMPINAN PPG PRAJABATAN\nJudul: Pojok Baca & Literasi Inklusif Desa Mitra\nMitra Utama: Karang Taruna, Perpustakaan Daerah, dan Sekolah Dasar Mitra."
+  },
+  {
     id: "doc-01",
     title: "Modul Ajar",
     category: "TEACHING MATERIAL",
@@ -38,30 +62,8 @@ const documentsData = [
     driveUrl: "https://drive.google.com/file/d/1yxAfC4yrpg7NzGxjppjygk7CVjuXAz6e/view",
     contentSnippet: "JURNAL REFLEKSI AKADEMIK PPG PRAJABATAN\nRefleksi ini merangkum proses perubahan pola pikir dari pengajar instruksional menjadi pendidik transformatif yang peka sosial-emosional."
   },
-  {
-    id: "doc-04",
-    title: "Modul Ajar Materi Computational Thinking",
-    category: "TEACHING MATERIAL",
-    categoryLabel: "TEACHING MATERIAL",
-    description: "",
-    date: "Nopember 2025",
-    fileType: "PDF",
-    icon: "",
-    driveUrl: "https://drive.google.com/file/d/1jJR6zdk3jtOsRipNDAjvZMzIWAOwp65-/view?usp=sharing",
-    contentSnippet: "INSTRUMEN ASESMEN DIAGNOSTIK & FORMAL\nMeliputi: 1. Lembar Kuesioner Gaya Belajar, 2. Rubrik Kinerja Diskusi Kelompok, 3. Lembar Penilaian Teman Sejawat."
-  },
-  {
-    id: "doc-05",
-    title: "Modul Ajar Materi Pengolahan Data TIK",
-    category: "TEACHING MATERIAL",
-    categoryLabel: "TEACHING MATERIAL",
-    description: "Dokumentasi perencanaan, anggaran, kemitraan, dan evaluasi dampak Projek Kepemimpinan Komunitas.",
-    date: "Desember 2025",
-    fileType: "PDF",
-    icon: "",
-    driveUrl: "https://drive.google.com/file/d/10Ba_txQ3aq42nBK-ipIGql1cKDKRb8SW/view?usp=sharing",
-    contentSnippet: "PRODUK KEPEMIMPINAN PPG PRAJABATAN\nJudul: Pojok Baca & Literasi Inklusif Desa Mitra\nMitra Utama: Karang Taruna, Perpustakaan Daerah, dan Sekolah Dasar Mitra."
-  },
+
+
   {
     id: "doc-06",
     title: "ASESMEN ",
